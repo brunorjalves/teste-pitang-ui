@@ -1,0 +1,30 @@
+<div class="container" style="max-width: 400px; margin: auto">
+  <form autocomplete="off" #f="ngForm" (ngSubmit)="login()">
+    <div class="ui-g ui-fluid">
+
+      <div class="ui-g-12">
+        <p-messages [(value)]="msgs"></p-messages>
+      </div>
+
+      <div class="ui-g-12">
+        <h1>Login</h1>
+      </div>
+
+      <div class="ui-g-12">
+        <input pInputText name="login" placeholder="Login" [(ngModel)]="user.login">
+      </div>
+
+      <div class="ui-g-12">
+        <input pInputText type="password" name="password" [(ngModel)]="user.password" placeholder="Password" required>
+      </div>
+
+      <div class="ui-g-12">
+        <a routerLink="/user">Signup</a>
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Login" [disabled]="!f.valid"></button>
+      </div>
+    </div>
+  </form>
+</div>

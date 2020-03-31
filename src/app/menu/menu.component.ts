@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './services/authentication.service';
-import { User } from './shared/user.model';
+import { AuthenticationService } from '../services/authentication.service';
+import { User } from '../shared/user.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
-export class AppComponent {
-  title = 'teste-pitang-ui';
+export class MenuComponent {
 
   currentUser: User;
 

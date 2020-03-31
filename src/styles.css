@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-size: 9pt;
+}
+
+.ui-messages-close {
+  margin-top: 10px;
+}
+
+body {
+  background-image: url("./assets/img/polygons.jpg");
+  background-repeat: repeat;
+}
