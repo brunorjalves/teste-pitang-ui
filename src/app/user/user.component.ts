@@ -50,7 +50,8 @@ export class UserComponent implements OnInit {
           this.findAll();
           this.user = new User();
           this.messageService.clear();
-          f.reset;
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: `Record saved successfully` });
+          f.resetForm();
         },
         error => {
           this.messageService.clear();
@@ -65,7 +66,8 @@ export class UserComponent implements OnInit {
           this.findAll();
           this.user = new User();
           this.messageService.clear();
-          f.reset;
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: `Record successfully updated` });
+          f.resetForm();
         },
         error => {
           this.messageService.clear();
@@ -84,6 +86,7 @@ export class UserComponent implements OnInit {
         () => {
           this.findAll();
           this.messageService.clear();
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: `Record deleted successfully` });
         },
         error => {
           this.messageService.clear();

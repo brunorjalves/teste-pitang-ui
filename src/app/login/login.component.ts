@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.msgs = [];
     this.user = new User();
     this.returnUrl = this.activedRoute.snapshot.queryParams['returnUrl'] || '/';
   }
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
+          console.log(error);
           this.messageService.clear();
           this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error.message}` });
         });

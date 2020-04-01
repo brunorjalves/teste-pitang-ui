@@ -1,7 +1,64 @@
 <div class="ui-g">
 
   <div class="ui-g-12">
-    <h1>Cars of current user</h1>
+    <p-messages [(value)]="msgs"></p-messages>
   </div>
 
+  <form #f="ngForm" name="carForm" autocomplete="off" (ngSubmit)="save(f)">
+    <div class="ui-g-12">
+      <h1>Cars</h1>
+    </div>
+
+    <div class="ui-g-12 ui-md-4 ui-fluid">
+      <label>Model</label>
+      <input pInputText type="text" name="model" [(ngModel)]="car.model" #carModel="ngModel" required>
+    </div>
+
+    <div class="ui-g-12 ui-md-2 ui-fluid">
+      <label>License plate</label>
+      <input pInputText type="text" name="licensePlate" [(ngModel)]="car.licensePlate" #licensePlate="ngModel" required>
+    </div>
+
+    <div class="ui-g-12 ui-md-4 ui-fluid">
+      <label>Color</label>
+      <input pInputText type="text" name="color" [(ngModel)]="car.color" #color="ngModel" required>
+    </div>
+
+    <div class="ui-g-12 ui-md-2 ui-fluid">
+      <label>Year</label>
+      <input pInputText type="text" name="year" [(ngModel)]="car.year" #year="ngModel" required>
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" [disabled]="f.invalid" label="Salvar"></button>
+    </div>
+  </form>
+
+  <div class="ui-g-12 ui-fluid">
+    <p-table [value]="cars" [responsive]="true">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 5%;">ID</th>
+          <th>Model</th>
+          <th>License plate</th>
+          <th>Color</th>
+          <th>Year</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>{{car.id}}</td>
+          <td>{{car.model }}</td>
+          <td>{{car.licensePlate}}</td>
+          <td>{{car.color}}</td>
+          <td>{{car.year}}</td>
+          <td style="text-align: center">
+            <p-button icon="pi pi-pencil" (click)="edit(car)"></p-button>
+            <p-button icon="pi pi-trash" (click)="remove(car)"></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
