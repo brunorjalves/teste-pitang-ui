@@ -26,13 +26,15 @@
 
     <div class="ui-g-12 ui-md-4 ui-fluid">
       <label>Birthday</label>
-      <p-calendar name="birthday" [monthNavigator]="true" [yearNavigator]="true" yearRange="1800:2020"
-        dateFormat="dd/mm/yy" [(ngModel)]="user.birthday" #birthday="ngModel" required></p-calendar>
+      <p-calendar  name="birthday" [monthNavigator]="true" [readonlyInput]="true" [yearNavigator]="true" yearRange="1800:2020"
+        dateFormat="dd/mm/yy" [(ngModel)]="user.birthday" #birthday="ngModel" required>
+      </p-calendar>
     </div>
 
     <div class="ui-g-12 ui-md-4 ui-fluid">
       <label>Phone</label>
-      <input pInputText type="text" name="phone" [(ngModel)]="user.phone" #phone="ngModel" required>
+      <p-inputMask mask="(99) 9999-9999" type="text" name="phone" [(ngModel)]="user.phone" #phone="ngModel" required>
+      </p-inputMask>
     </div>
 
     <div class="ui-g-12 ui-md-2 ui-fluid">

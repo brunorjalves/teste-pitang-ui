@@ -26,7 +26,8 @@
 
     <div class="ui-g-12 ui-md-2 ui-fluid">
       <label>Year</label>
-      <input pInputText type="text" name="year" [(ngModel)]="car.year" #year="ngModel" required>
+      <p-inputMask mask="9999" type="text" name="year" [(ngModel)]="car.year" #year="ngModel" required>
+      </p-inputMask>
     </div>
 
     <div class="ui-g-12">

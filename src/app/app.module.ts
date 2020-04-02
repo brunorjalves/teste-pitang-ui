@@ -15,6 +15,7 @@ import { CarComponent } from './car/car.component';
 import { CalendarModule } from 'primeng/calendar';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { InputMaskModule } from 'primeng/inputmask';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 
@@ -39,7 +40,8 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
     CalendarModule,
     MessagesModule,
     MessageModule,
-    HttpClientModule
+    HttpClientModule,
+    InputMaskModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
